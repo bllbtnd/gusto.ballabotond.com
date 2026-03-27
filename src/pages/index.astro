@@ -1,3 +1,36 @@
 ---
-return Astro.redirect('/whisky');
+import GustoLayout from '../layouts/GustoLayout.astro';
+import SearchableRatingGrid from '../components/SearchableRatingGrid';
+import type { RatingEntry } from '../components/RatingCard';
+import rawData from '../data/whisky.json';
+
+const entries: RatingEntry[] = [...rawData].sort((a, b) => b.date.localeCompare(a.date)).map((w) => ({
+  id: w.id,
+  name: w.name,
+  subtitle: `${w.distillery} · ${w.region}`,
+  score: w.score,
+  date: w.date,
+  notesPreview: [w.nose, w.palate, w.finish].filter(Boolean).join(' — '),
+  accentColor: '#C9A96B',
+  detailLines: [
+    { label: 'Distillery', value: w.distillery },
+    { label: 'Region', value: w.region },
+    ...(w.age ? [{ label: 'Age', value: `${w.age} years` }] : []),
+    { label: 'ABV', value: `${w.abv}%` },
+    { label: 'Nose', value: w.nose },
+    { label: 'Palate', value: w.palate },
+    { label: 'Finish', value: w.finish },
+  ],
+}));
 ---
+
+<GustoLayout title="Whisky" category="whisky">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <header class="mb-8">
+      <h1 class="font-serif text-5xl tracking-brutal leading-brutal text-pf-text">Whisky</h1>
+      <p class="text-pf-muted text-sm mt-2 font-sans">{entries.length} expressions tasted</p>
+    </header>
+
+    <SearchableRatingGrid client:load entries={entries} />
+  </div>
+</GustoLayout>
