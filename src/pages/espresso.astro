@@ -1,0 +1,30 @@
+---
+import GustoLayout from '../layouts/GustoLayout.astro';
+import SearchableRatingGrid from '../components/SearchableRatingGrid';
+import type { RatingEntry } from '../components/RatingCard';
+import rawData from '../data/espresso.json';
+
+const entries: RatingEntry[] = [...rawData].sort((a, b) => b.date.localeCompare(a.date)).map((e) => ({
+  id: e.id,
+  name: e.name,
+  subtitle: e.city,
+  score: e.score,
+  date: e.date,
+  notesPreview: e.notes,
+  accentColor: '#6B4226',
+  detailLines: [
+    { label: 'City', value: e.city },
+  ],
+}));
+---
+
+<GustoLayout title="Espresso" category="espresso">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <header class="mb-8">
+      <h1 class="font-serif text-5xl tracking-brutal leading-brutal text-pf-text">Espresso</h1>
+      <p class="text-pf-muted text-sm mt-2 font-sans">{entries.length} cups rated</p>
+    </header>
+
+    <SearchableRatingGrid client:load entries={entries} />
+  </div>
+</GustoLayout>

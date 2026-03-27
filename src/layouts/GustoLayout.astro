@@ -1,0 +1,81 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import CategoryNav from '../components/CategoryNav';
+import BackgroundGradient from '../components/BackgroundGradient.astro';
+import '../styles/global.css';
+import '@fontsource/space-grotesk/300.css';
+import '@fontsource/space-grotesk/400.css';
+import '@fontsource/space-grotesk/500.css';
+import '@fontsource/instrument-serif/400.css';
+
+interface Props {
+  title: string;
+  category?: 'whisky' | 'cigars' | 'espresso' | 'places';
+}
+
+const { title, category } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="lenis lenis-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} — gusto</title>
+    <meta name="description" content="Personal tasting & place ratings by Balla Botond" />
+    <meta name="theme-color" content="#F0EBE3" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <ViewTransitions />
+  </head>
+  <body class="bg-pf-bg text-pf-text min-h-screen font-sans">
+    <BackgroundGradient />
+
+    <CategoryNav client:load currentCategory={category} />
+
+    <main
+      style="view-transition-name: main-content;"
+      class="relative z-10 pt-16"
+    >
+      <slot />
+    </main>
+
+    <script>
+      import Lenis from 'lenis';
+      import 'lenis/dist/lenis.css';
+
+      let lenis: InstanceType<typeof Lenis> | null = null;
+
+      function initLenis() {
+        if (lenis) {
+          lenis.destroy();
+          lenis = null;
+        }
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) return;
+
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (isTouchDevice) return;
+
+        lenis = new Lenis({
+          autoRaf: true,
+          lerp: 0.08,
+          smoothWheel: true,
+          wheelMultiplier: 0.8,
+        });
+      }
+
+      initLenis();
+      document.addEventListener('astro:after-swap', initLenis);
+
+      window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
+        if (e.matches && lenis) {
+          lenis.destroy();
+          lenis = null;
+        } else if (!e.matches && !lenis) {
+          initLenis();
+        }
+      });
+    </script>
+  </body>
+</html>

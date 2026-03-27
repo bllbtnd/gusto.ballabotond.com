@@ -1,0 +1,62 @@
+[
+  {
+    "id": "montecristo-no2",
+    "name": "Montecristo No. 2",
+    "brand": "Montecristo",
+    "vitola": "Torpedo",
+    "origin": "Cuba",
+    "score": 93,
+    "notes": "Cedar, leather, coffee, subtle sweetness",
+    "duration": "90min",
+    "date": "2024-10",
+    "image": null
+  },
+  {
+    "id": "cohiba-siglo-vi",
+    "name": "Cohiba Siglo VI",
+    "brand": "Cohiba",
+    "vitola": "Gran Corona",
+    "origin": "Cuba",
+    "score": 96,
+    "notes": "Rich earth, dark chocolate, espresso, creamy finish",
+    "duration": "120min",
+    "date": "2024-09",
+    "image": null
+  },
+  {
+    "id": "romeo-julieta-wide-churchill",
+    "name": "Romeo y Julieta Wide Churchill",
+    "brand": "Romeo y Julieta",
+    "vitola": "Wide Churchill",
+    "origin": "Cuba",
+    "score": 89,
+    "notes": "Floral, cedar, mild spice, honey",
+    "duration": "75min",
+    "date": "2024-08",
+    "image": null
+  },
+  {
+    "id": "arturo-fuente-opus-x",
+    "name": "Arturo Fuente Opus X",
+    "brand": "Arturo Fuente",
+    "vitola": "Robusto",
+    "origin": "Dominican Republic",
+    "score": 95,
+    "notes": "Pepper, cocoa, leather, full-bodied complexity",
+    "duration": "60min",
+    "date": "2024-07",
+    "image": null
+  },
+  {
+    "id": "partagas-serie-d-no4",
+    "name": "Partagás Serie D No. 4",
+    "brand": "Partagás",
+    "vitola": "Robusto",
+    "origin": "Cuba",
+    "score": 91,
+    "notes": "Earthy, woody, dark spice, coffee grounds",
+    "duration": "50min",
+    "date": "2024-06",
+    "image": null
+  }
+]

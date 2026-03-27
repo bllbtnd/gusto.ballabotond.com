@@ -1,0 +1,18 @@
+---
+import GustoLayout from '../layouts/GustoLayout.astro';
+import PlacesPageClient from '../components/PlacesPageClient';
+import rawData from '../data/places.json';
+
+const places = [...rawData].sort((a, b) => b.date.localeCompare(a.date));
+---
+
+<GustoLayout title="Places" category="places">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <header class="mb-8">
+      <h1 class="font-serif text-5xl tracking-brutal leading-brutal text-pf-text">Places</h1>
+      <p class="text-pf-muted text-sm mt-2 font-sans">{places.length} places visited</p>
+    </header>
+
+    <PlacesPageClient client:load places={places} />
+  </div>
+</GustoLayout>

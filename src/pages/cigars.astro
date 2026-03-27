@@ -1,0 +1,33 @@
+---
+import GustoLayout from '../layouts/GustoLayout.astro';
+import SearchableRatingGrid from '../components/SearchableRatingGrid';
+import type { RatingEntry } from '../components/RatingCard';
+import rawData from '../data/cigars.json';
+
+const entries: RatingEntry[] = [...rawData].sort((a, b) => b.date.localeCompare(a.date)).map((c) => ({
+  id: c.id,
+  name: c.name,
+  subtitle: `${c.brand} · ${c.vitola} · ${c.origin}`,
+  score: c.score,
+  date: c.date,
+  notesPreview: c.notes,
+  accentColor: '#8B6347',
+  detailLines: [
+    { label: 'Brand', value: c.brand },
+    { label: 'Vitola', value: c.vitola },
+    { label: 'Origin', value: c.origin },
+    { label: 'Duration', value: c.duration },
+  ],
+}));
+---
+
+<GustoLayout title="Cigars" category="cigars">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <header class="mb-8">
+      <h1 class="font-serif text-5xl tracking-brutal leading-brutal text-pf-text">Cigars</h1>
+      <p class="text-pf-muted text-sm mt-2 font-sans">{entries.length} cigars smoked</p>
+    </header>
+
+    <SearchableRatingGrid client:load entries={entries} />
+  </div>
+</GustoLayout>

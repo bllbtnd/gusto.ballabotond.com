@@ -1,0 +1,67 @@
+[
+  {
+    "id": "trattoria-da-enzo",
+    "name": "Trattoria da Enzo al 29",
+    "type": "restaurant",
+    "city": "Rome",
+    "address": "Via dei Vascellari 29, Rome",
+    "lat": 41.889,
+    "lng": 12.469,
+    "score": 94,
+    "notes": "Cacio e pepe as it should be. Unpretentious, perfect.",
+    "date": "2024-09",
+    "image": null
+  },
+  {
+    "id": "osteria-dell-enoteca",
+    "name": "Osteria dell'Enoteca",
+    "type": "restaurant",
+    "city": "Florence",
+    "address": "Via Romana 70, Florence",
+    "lat": 43.762,
+    "lng": 11.248,
+    "score": 91,
+    "notes": "Exceptional bistecca fiorentina, thoughtful wine list, old-world Florentine atmosphere.",
+    "date": "2024-07",
+    "image": null
+  },
+  {
+    "id": "bar-basso-milan",
+    "name": "Bar Basso",
+    "type": "bar",
+    "city": "Milan",
+    "address": "Via Plinio 39, Milan",
+    "lat": 45.476,
+    "lng": 9.213,
+    "score": 90,
+    "notes": "Birthplace of the Negroni Sbagliato. The Campari aperitivo hour here is an institution.",
+    "date": "2024-06",
+    "image": null
+  },
+  {
+    "id": "russ-daughters-nyc",
+    "name": "Russ & Daughters Café",
+    "type": "café",
+    "city": "New York",
+    "address": "127 Orchard St, New York",
+    "lat": 40.7196,
+    "lng": -73.9891,
+    "score": 92,
+    "notes": "The perfect bagel with lox and schmear. A New York ritual not to be missed.",
+    "date": "2024-05",
+    "image": null
+  },
+  {
+    "id": "retox-budapest",
+    "name": "Taquería ReTox",
+    "type": "restaurant",
+    "city": "Budapest",
+    "address": "Kazinczy utca 22, Budapest",
+    "lat": 47.4994,
+    "lng": 19.0622,
+    "score": 85,
+    "notes": "Surprisingly good tacos in Budapest. Carnitas are the move. Casual, fun, loud.",
+    "date": "2024-04",
+    "image": null
+  }
+]
