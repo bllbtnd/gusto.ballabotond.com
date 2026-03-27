@@ -16,12 +16,22 @@ export default function CategoryNav({ currentCategory }: Props) {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-pf-bg/90 backdrop-blur-sm border-b border-pf-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center gap-1 h-14">
-          <a
-            href="/"
-            className="mr-auto font-serif text-lg tracking-tight-brutal text-pf-text/70 hover:text-pf-text transition-colors"
-          >
-            gusto
-          </a>
+          <div className="mr-auto flex items-baseline gap-2">
+            <a
+              href="/"
+              className="font-serif text-lg tracking-tight-brutal text-pf-text/70 hover:text-pf-text transition-colors"
+            >
+              gusto
+            </a>
+            <a
+              href="https://ballabotond.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-xs text-pf-muted/50 hover:text-pf-muted transition-colors"
+            >
+              ballabotond.com
+            </a>
+          </div>
           <div className="flex items-center gap-1">
             {CATEGORIES.map((cat) => {
               const isActive = currentCategory === cat.id;
