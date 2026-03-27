@@ -1,47 +1,11 @@
 [
   {
-    "id": "bar-san-calisto",
-    "name": "Bar San Calisto",
-    "city": "Rome",
-    "score": 88,
-    "notes": "Classic Roman pull, slightly bitter, thick crema",
-    "date": "2024-09",
-    "image": null
-  },
-  {
-    "id": "caffe-florian",
-    "name": "Caffè Florian",
-    "city": "Venice",
-    "score": 82,
-    "notes": "Historic atmosphere outshines the cup, but a decent espresso nonetheless — bright, slightly acidic",
-    "date": "2024-08",
-    "image": null
-  },
-  {
-    "id": "bar-toma",
-    "name": "Bar Tomà",
-    "city": "Rome",
-    "score": 91,
-    "notes": "Exceptional crema, dark roast with a hint of dark cherry, perfectly extracted",
-    "date": "2024-09",
-    "image": null
-  },
-  {
-    "id": "caffe-dell-oro",
-    "name": "Caffè dell'Oro",
-    "city": "Florence",
-    "score": 86,
-    "notes": "Smooth, rounded, notes of hazelnut and caramel — a reliable morning ritual",
-    "date": "2024-07",
-    "image": null
-  },
-  {
-    "id": "espresso-house-budapest",
-    "name": "Espresso House",
-    "city": "Budapest",
-    "score": 79,
-    "notes": "Consistent but unexciting, mild acidity, medium body — solid everyday espresso",
-    "date": "2024-06",
+    "id": "stegafredo-intermezzo",
+    "name": "Stegafredo Intermezzo",
+    "city": "Italy",
+    "score": 61,
+    "notes": "Extremely nutty and cheap coffee. There is nothing wrong with it but not much right either. Good for every day use but not something to seek out.",
+    "date": "2026-03",
     "image": null
   }
 ]
